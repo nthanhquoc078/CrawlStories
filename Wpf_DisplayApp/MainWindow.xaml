@@ -1,0 +1,27 @@
+﻿<Window x:Class="Wpf_DisplayApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_DisplayApp"
+        mc:Ignorable="d" FontSize="24"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox  Width="600" Height="auto"  VerticalAlignment="Center" HorizontalAlignment="Left" x:Name="txbUrl" Margin="5"/>
+            <TextBlock IsHitTestVisible="False" Text="Enter URL Here" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=txbUrl}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            <Button x:Name="btnGetData" Padding="20 10" Click="btnGetData_Click">Download Text Files</Button>
+        </StackPanel>
+    </Grid>
+</Window>
