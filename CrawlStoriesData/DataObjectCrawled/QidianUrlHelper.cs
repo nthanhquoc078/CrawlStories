@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CrawlDataServices;
+using TranslateServices;
 
 namespace CrawlStoriesData.DataObjectCrawled
 {
@@ -27,6 +28,14 @@ namespace CrawlStoriesData.DataObjectCrawled
                 return string.Empty;
             }
             return $"{qidianPageContext.BookId}\\Chinese\\{qidianPageContext.BookId}-{qidianPageContext.ChapterId}-Chapter{qidianPageContext.ChapterNumber + (qidianPageContext.VipStatus ? "_Vip" : "")}.txt";
+        }
+        public static string GenerateTranslateFileName(QidianPageContext qidianPageContext, LanguageEnum language)
+        {
+            if (qidianPageContext == null || qidianPageContext.BookId.IsNullOrEmpty() || qidianPageContext.ChapterContent.IsNullOrEmpty())
+            {
+                return string.Empty;
+            }
+            return $"{qidianPageContext.BookId}\\{language.GetLanguageFullName()}\\{qidianPageContext.BookId}-{qidianPageContext.ChapterId}-Chapter{qidianPageContext.ChapterNumber + (qidianPageContext.VipStatus ? "_Vip" : "")}.txt";
         }
         public static bool IsValidUrl(this string url)
         {

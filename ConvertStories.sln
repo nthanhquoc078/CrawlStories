@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrawlStoriesData", "CrawlSt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrawlDataServices", "CrawlDataServices\CrawlDataServices.csproj", "{4AA6DED8-64F2-4D36-90E6-B79587BDF57C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslateServices", "TranslateServices\TranslateServices.csproj", "{154E86DF-5FF0-4DF5-99F5-CCA055D4903F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4AA6DED8-64F2-4D36-90E6-B79587BDF57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AA6DED8-64F2-4D36-90E6-B79587BDF57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AA6DED8-64F2-4D36-90E6-B79587BDF57C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{154E86DF-5FF0-4DF5-99F5-CCA055D4903F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{154E86DF-5FF0-4DF5-99F5-CCA055D4903F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{154E86DF-5FF0-4DF5-99F5-CCA055D4903F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{154E86DF-5FF0-4DF5-99F5-CCA055D4903F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

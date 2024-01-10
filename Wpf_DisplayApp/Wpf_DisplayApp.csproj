@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CrawlDataServices\CrawlDataServices.csproj" />
     <ProjectReference Include="..\CrawlStoriesData\CrawlStoriesData.csproj" />
+    <ProjectReference Include="..\TranslateServices\TranslateServices.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@ using CrawlStoriesData;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using TranslateServices;
 using Wpf_DisplayApp.StartupHelpers;
 
 namespace Wpf_DisplayApp
@@ -23,6 +24,8 @@ namespace Wpf_DisplayApp
 
                     services.AddSingleton<ICrawlData, HttpClientCrawlData>();
                     services.AddTransient<ICrawWebpageServices, CrawQidianWebpageServices>();
+                    services.AddTransient<ILogger, Logger>();
+                    services.AddTransient<ITranslateService, SeleniumGoogleTranslateServicer>();
                 }).Build();
         }
         protected override async void OnStartup(StartupEventArgs e)
@@ -36,6 +39,7 @@ namespace Wpf_DisplayApp
         }
         protected override async void OnExit(ExitEventArgs e)
         {
+            _appHost?.Dispose();
             await _appHost!.StopAsync();
 
             base.OnExit(e);

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TranslateServices;
 using Wpf_DisplayApp.StartupHelpers;
 
 namespace Wpf_DisplayApp
@@ -22,10 +23,13 @@ namespace Wpf_DisplayApp
     public partial class MainWindow : Window
     {
         private readonly ICrawWebpageServices _crawQidianWebpageServices;
+        private readonly ITranslateService _translateServices;
 
-        public MainWindow(ICrawWebpageServices crawQidianWebpageServices)
+        public MainWindow(ICrawWebpageServices crawQidianWebpageServices,
+            ITranslateService translateServices)
         {
             _crawQidianWebpageServices = crawQidianWebpageServices;
+            _translateServices = translateServices;
             InitializeComponent();
             Closed += ExitProgram;
         }
@@ -63,6 +67,12 @@ namespace Wpf_DisplayApp
             {
                 MessageBox.Show(string.Format("{0} Directory does not exist!", folderPath));
             }
+        }
+        private async void btnTranslate_Click(object sender, RoutedEventArgs e)
+        {
+            var sourceInput = txbUrl.Text;
+            var result = await _translateServices.TranslateAsync(sourceInput);
+            MessageBox.Show($"Translation: {result}");
         }
     }
 }

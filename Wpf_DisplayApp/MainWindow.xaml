@@ -22,6 +22,7 @@
                 </TextBlock.Style>
             </TextBlock>
             <Button x:Name="btnGetData" Padding="20 10" Click="btnGetData_Click">Download Text Files</Button>
+            <!--<Button x:Name="btnTranslate" Margin="10" Padding="20 10" Click="btnTranslate_Click" >Translate</Button>-->
         </StackPanel>
     </Grid>
 </Window>
